@@ -2,64 +2,85 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen bg-[#0f172a] text-slate-400 selection:bg-teal-300 selection:text-teal-900">
+      {/* 1. STICKY HEADER / NAV */}
+      <nav className="fixed top-0 z-50 w-full px-6 py-4 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
+          <span className="text-teal-400 font-mono font-bold">RC.dev</span>
+          <div className="space-x-8 text-sm font-medium text-slate-200">
+            <a href="#about" className="hover:text-teal-400 transition">About</a>
+            <a href="#projects" className="hover:text-teal-400 transition">Projects</a>
+            <a href="#impact" className="hover:text-teal-400 transition">Impact</a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="max-w-5xl mx-auto px-6 pt-32 pb-20">
+        {/* 2. HERO SECTION */}
+        <section id="about" className="mb-32">
+          <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 tracking-tight">
+            I build digital solutions <br />
+            <span className="text-slate-400">for global impact.</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 max-w-xl text-lg leading-relaxed">
+            Full-stack developer specializing in modern web technologies. 
+            I bridge the gap between complex code and community empowerment through 
+            <span className="text-teal-400"> Kannada Tech Education</span>.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <div className="mt-10 flex gap-4">
+            <a href="https://github.com/ianandrcgit" className="px-6 py-3 rounded-md bg-teal-400/10 text-teal-400 font-semibold border border-teal-400/20 hover:bg-teal-400/20 transition">
+              View GitHub
+            </a>
+            <button className="px-6 py-3 rounded-md border border-slate-700 hover:border-teal-400 transition">
+              Resume
+            </button>
+          </div>
+        </section>
+
+        {/* 3. FEATURED PROJECTS (Phase 1) */}
+        <section id="projects" className="mb-32">
+          <h2 className="text-2xl font-bold text-slate-100 mb-12 flex items-center">
+            <span className="text-teal-400 font-mono mr-2 text-sm">01.</span> Selected Work
+          </h2>
+          
+          <div className="grid gap-12">
+            {/* Project Card 1 */}
+            <div className="group relative grid lg:grid-cols-12 gap-4 p-4 rounded-xl hover:bg-slate-800/50 transition duration-300">
+              <div className="lg:col-span-4 text-sm font-bold uppercase tracking-widest text-slate-500">
+                Next.js • Tailwind • Supabase
+              </div>
+              <div className="lg:col-span-8">
+                <h3 className="text-slate-200 font-semibold text-xl group-hover:text-teal-400 transition">
+                  Modern Citizen Services Platform
+                </h3>
+                <p className="mt-2 text-sm leading-normal">
+                  A high-performance web app designed to simplify local governance tasks. 
+                  Focused on accessibility and lightning-fast load times for users on low-bandwidth connections.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. KANNADA COMMUNITY & PASSIVE INCOME (Phase 2 Preview) */}
+        <section id="impact" className="p-8 rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700">
+          <div className="max-w-2xl">
+            <h2 className="text-xl font-bold text-teal-400">Community & Innovation</h2>
+            <p className="mt-4 italic text-slate-300">
+              Building for the next billion users. My work includes a dedicated Kannada YouTube 
+              channel for tech education and several niche citizen service tools.
+            </p>
+            <div className="mt-6 flex items-center gap-2 text-sm font-mono text-slate-400">
+              <span>Coming Soon:</span>
+              <span className="bg-slate-700 px-2 py-1 rounded">kannada.yourname.dev</span>
+            </div>
+          </div>
+        </section>
       </main>
+
+      <footer className="text-center pb-10 text-xs text-slate-500">
+        Built with Next.js & Tailwind CSS. Hosted on Vercel.
+      </footer>
     </div>
   );
 }
