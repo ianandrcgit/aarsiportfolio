@@ -22,9 +22,9 @@ export default function Home() {
         
         {/* 1. HERO SECTION */}
         <section id="about" className="min-h-screen flex flex-col justify-center pt-20">
-          <p className="text-teal-400 font-mono mb-5">Hi, my name is</p>
+          <p className="text-teal-400 font-mono mb-5">Hi, my name is Anand R C, Build things in the name of ---- </p>
           <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 mb-4">
-            Anand R C. 
+            Aarsi  
           </h1>
           <h2 className="text-4xl lg:text-6xl font-bold text-slate-400 mb-6 leading-tight">
             Architecting digital solutions<br />for global impact.
