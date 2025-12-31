@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "../components/Navbar";
+import Typewriter from 'typewriter-effect';
 
 export default function Home() {
   return (
@@ -9,7 +12,7 @@ export default function Home() {
       {/* Social Links Sidebar */}
       <div className="hidden lg:block fixed left-10 bottom-0 z-10">
         <div className="flex flex-col items-center space-y-6 after:content-[''] after:w-[1px] after:h-24 after:bg-slate-400">
-          <a href="https://github.com/ianandrcgit" target="_blank" className="hover:-translate-y-1 hover:text-teal-400 transition-all">
+          <a href="https://github.com/ianandrcgit" target="_blank" rel="noreferrer" className="hover:-translate-y-1 hover:text-teal-400 transition-all">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
           </a>
           <a href="#" className="hover:-translate-y-1 hover:text-teal-400 transition-all text-sm font-mono tracking-widest vertical-text mb-4">
@@ -23,14 +26,24 @@ export default function Home() {
         {/* 1. HERO SECTION */}
         <section id="about" className="min-h-screen flex flex-col justify-center pt-20">
           <p className="text-teal-400 font-mono mb-5">Hi, my name is Anand R C, I build things in the name of ....</p>
-          <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 mb-4">
-            Aarsi
+          
+          <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 mb-4 h-[1.2em]">
+            <Typewriter
+              options={{
+                strings: ['Aarsi', 'Aarsi', 'Aarsi'],
+                autoStart: true,
+                loop: true,
+                wrapperClassName: "text-slate-100",
+                cursorClassName: "text-teal-400"
+              }}
+            />
           </h1>
+
           <h2 className="text-4xl lg:text-6xl font-bold text-slate-400 mb-6 leading-tight">
             Building digital solutions<br />for global impact.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed mb-10">
-            I specialize in building resilient, high-performance web applications that solve complex business challenges. My focus is on developing <span className="text-teal-400">scalable systems</span> and ensuring seamless integration between robust backend logic and intuitive frontend experiences.
+            I specialize in building resilient, high-performance web applications that solve complex business challenges. My focus is on developing <span className="text-teal-400 font-semibold">scalable systems</span> and ensuring seamless integration between robust backend logic and intuitive frontend experiences.
           </p>
           <div>
             <a href="#projects" className="px-7 py-4 border border-teal-400 text-teal-400 rounded hover:bg-teal-400/10 transition-all font-mono">
@@ -63,16 +76,20 @@ export default function Home() {
             
             {/* PROFILE IMAGE AREA */}
             <div className="relative group max-w-[250px] mx-auto">
-              <div className="absolute inset-0 border-2 border-teal-400 rounded translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
-              <div className="relative bg-teal-400/20 rounded overflow-hidden grayscale hover:grayscale-0 transition-all aspect-square">
-                <Image 
-                   src="/profile.jpg" 
-                  alt="Anand R C" 
-                  fill
-                  className="object-cover rounded"
-                />
-              </div>
-            </div>
+  {/* The decorative border */}
+  <div className="absolute inset-0 border-2 border-teal-400 rounded translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
+  
+  {/* The image container - ensure 'relative' and 'aspect-square' are here */}
+  <div className="relative bg-teal-400/20 rounded overflow-hidden grayscale hover:grayscale-0 transition-all aspect-square">
+    <Image 
+      src="/profile.jpg" 
+      alt="Anand R C" 
+      fill
+      className="object-cover rounded"
+      priority
+    />
+  </div>
+</div>
           </div>
         </section>
 
@@ -105,7 +122,7 @@ export default function Home() {
         </section>
 
         {/* 4. REMOTE WORKFLOW SECTION */}
-        <section id="impact" className="py-24">
+        <section className="py-24">
           <div className="bg-[#112240] border border-slate-700 p-10 rounded-lg max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
