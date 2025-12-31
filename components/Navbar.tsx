@@ -16,7 +16,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
-    { name: "Kannada Hub", href: "#impact" },
+    { name: "Remote Work", href: "#impact" },
     { name: "Contact", href: "mailto:your@email.com" },
   ];
 

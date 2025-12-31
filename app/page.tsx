@@ -22,12 +22,12 @@ export default function Home() {
         
         {/* 1. HERO SECTION */}
         <section id="about" className="min-h-screen flex flex-col justify-center pt-20">
-          <p className="text-teal-400 font-mono mb-5">Hi, my name is Anand R C, Build things in the name of ---- </p>
+          <p className="text-teal-400 font-mono mb-5">Hi, my name is Anand R C, I build things in the name of ....</p>
           <h1 className="text-5xl lg:text-7xl font-bold text-slate-100 mb-4">
-            Aarsi  
+            Aarsi
           </h1>
           <h2 className="text-4xl lg:text-6xl font-bold text-slate-400 mb-6 leading-tight">
-            Architecting digital solutions<br />for global impact.
+            Building digital solutions<br />for global impact.
           </h2>
           <p className="max-w-xl text-lg leading-relaxed mb-10">
             I specialize in building resilient, high-performance web applications that solve complex business challenges. My focus is on developing <span className="text-teal-400">scalable systems</span> and ensuring seamless integration between robust backend logic and intuitive frontend experiences.
@@ -60,10 +60,17 @@ export default function Home() {
                 <li className="flex items-center gap-2"> <span className="text-teal-400">▹</span> Node.js & APIs</li>
               </ul>
             </div>
+            
+            {/* PROFILE IMAGE AREA */}
             <div className="relative group max-w-[250px] mx-auto">
               <div className="absolute inset-0 border-2 border-teal-400 rounded translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-all"></div>
-              <div className="relative bg-teal-400/20 rounded overflow-hidden grayscale hover:grayscale-0 transition-all">
-                <div className="aspect-square bg-slate-700 flex items-center justify-center text-slate-500 font-mono italic text-xs">Profile Image</div>
+              <div className="relative bg-teal-400/20 rounded overflow-hidden grayscale hover:grayscale-0 transition-all aspect-square">
+                <Image 
+                   src="/profile.jpg" 
+                  alt="Anand R C" 
+                  fill
+                  className="object-cover rounded"
+                />
               </div>
             </div>
           </div>
@@ -97,7 +104,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 4. REMOTE WORKFLOW / STACK SECTION */}
+        {/* 4. REMOTE WORKFLOW SECTION */}
         <section id="impact" className="py-24">
           <div className="bg-[#112240] border border-slate-700 p-10 rounded-lg max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-10 items-center">
@@ -111,11 +118,11 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4 font-mono text-xs">
                 <div className="p-4 border border-slate-700 rounded bg-slate-900/50">
                    <p className="text-teal-400 mb-1">Version Control</p>
-                   <p className="text-slate-300">GitHub / GitLab</p>
+                   <p className="text-slate-300">GitHub</p>
                 </div>
                 <div className="p-4 border border-slate-700 rounded bg-slate-900/50">
                    <p className="text-teal-400 mb-1">CI/CD</p>
-                   <p className="text-slate-300">Vercel / Actions</p>
+                   <p className="text-slate-300">Vercel</p>
                 </div>
                 <div className="p-4 border border-slate-700 rounded bg-slate-900/50">
                    <p className="text-teal-400 mb-1">Collaboration</p>
@@ -135,7 +142,7 @@ export default function Home() {
           <h2 className="text-teal-400 font-mono mb-4 text-sm">03. What&apos;s Next?</h2>
           <h3 className="text-5xl font-bold text-slate-100 mb-6">Get In Touch</h3>
           <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-            I am currently open to new remote opportunities and technical collaborations. Whether you have a specific project in mind or just want to connect, feel free to reach out.
+            I am currently open to new remote opportunities and technical collaborations. Feel free to reach out via email for inquiries or just to say hello.
           </p>
           <a href="mailto:your-email@gmail.com" className="px-10 py-5 border-2 border-teal-400 text-teal-400 rounded-md hover:bg-teal-400/10 transition-all font-mono font-bold tracking-widest uppercase text-sm">
             Say Hello
